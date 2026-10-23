@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'favorites',
-    loadComponent: () => import('./features/photos/components/favorites-list/favorites-list.component')
+    loadComponent: () => import('./features/favorites/components/favorites-list/favorites-list.component')
       .then((m) => m.FavoritesListComponent),
 
   }

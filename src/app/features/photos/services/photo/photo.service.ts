@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay, map, Observable } from 'rxjs';
-import { PhotoDtoInterface, PhotoInterface } from '../../../core/interfaces/photo.interface';
+import { PhotoDtoInterface, PhotoInterface } from '../../../../core/interfaces/photo.interface';
 
 const MIN_DELAY = 200;
 const MAX_DELAY = 300;

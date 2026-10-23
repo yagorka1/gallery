@@ -1,0 +1,9 @@
+@if (favorites().length) {
+  <div class="photo-list">
+    @for (photo of favorites(); track photo.id) {
+      <app-photo-card [photo]="photo" (cardClick)="openDetail($event)" />
+    }
+  </div>
+} @else {
+  <p class="empty">You have no favorite photos yet.</p>
+}
