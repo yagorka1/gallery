@@ -1,0 +1,14 @@
+<div class="photo-list">
+  @for (photo of photos(); track photo.id) {
+    <app-photo-card [photo]="photo"></app-photo-card>
+  }
+
+  <div #anchor></div>
+</div>
+
+@if (this.isLoading()) {
+  <div class="spinner">
+    <mat-spinner diameter="24"></mat-spinner>
+  </div>
+}
+
