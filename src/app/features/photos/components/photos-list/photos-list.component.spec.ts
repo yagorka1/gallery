@@ -1,9 +1,9 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { PhotosListComponent } from './photos-list.component';
-import { PhotoService } from '../../services/photo.service';
 import { of } from 'rxjs';
 import { PhotoInterface } from '../../../../core/interfaces/photo.interface';
+import { PhotoService } from '../../services/photo/photo.service';
 
 const makeBatch = (count: number, offset = 0): PhotoInterface[] =>
   Array.from({ length: count }, (_, i) => ({ id: String(offset + i), url: `url-${offset + i}` }));
@@ -14,7 +14,7 @@ describe('PhotosListComponent', () => {
   let photoService: jasmine.SpyObj<PhotoService>;
 
   beforeEach(async () => {
-    photoService = jasmine.createSpyObj<PhotoService>('PhotoService', ['loadPhotos']);
+    photoService = jasmine.createSpyObj<PhotoService>('FavoritesService', ['loadPhotos']);
 
     await TestBed.configureTestingModule({
       imports: [PhotosListComponent]

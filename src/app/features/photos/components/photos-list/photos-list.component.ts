@@ -8,14 +8,17 @@ import {
   signal, viewChild,
   WritableSignal
 } from '@angular/core';
-import { PhotoService } from '../../services/photo.service';
 import { PhotoInterface } from '../../../../core/interfaces/photo.interface';
 import { finalize } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { PhotoCardComponent } from '../photo-card/photo-card.component';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { PhotoService } from '../../services/photo/photo.service';
+import { FavoritesService } from '../../../favorites/services/favorites/favorites.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const PAGE_LIMIT: number = 30;
+const TOST_DURATION: number = 2000;
 
 @Component({
   selector: 'app-photos-list',
@@ -35,6 +38,8 @@ export class PhotosListComponent implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
   private currentPage: number = 1;
   private isEndOfList: boolean = false;
+  private favoriteService: FavoritesService = inject(FavoritesService);
+  private readonly snackBar = inject(MatSnackBar);
 
   public photos: WritableSignal<PhotoInterface[]> = signal<PhotoInterface[]>([]);
   public isLoading: WritableSignal<boolean> = signal(false);
@@ -69,5 +74,17 @@ export class PhotosListComponent implements AfterViewInit, OnDestroy {
         this.isEndOfList = true;
       }
     })
+  }
+
+  public addToFavorite(photo: PhotoInterface) {
+    if (!this.favoriteService.has(photo.id)) {
+      this.snackBar.open('Added to favorites', 'OK', {
+        duration: TOST_DURATION,
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom',
+      });
+
+      this.favoriteService.add(photo);
+    }
   }
 }

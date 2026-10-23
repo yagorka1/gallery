@@ -2,7 +2,7 @@ import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { PhotoService } from './photo.service';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { PhotoDtoInterface, PhotoInterface } from '../../../core/interfaces/photo.interface';
+import { PhotoDtoInterface, PhotoInterface } from '../../../../core/interfaces/photo.interface';
 
 const MAX_DELAY_FLUSH = 300;
 

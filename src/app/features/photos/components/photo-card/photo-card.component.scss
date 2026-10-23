@@ -1,12 +1,7 @@
-.photo {
-  position: relative !important;
-  width: 200px !important;
-  height: 200px !important;
-  object-fit: cover !important;
-}
-
-:host {
-  //display: block;
-  flex: 0 0 200px;
-  //overflow: hidden;
+.photo-button {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
