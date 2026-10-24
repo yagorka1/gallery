@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { provideHttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderComponent,
   ],
   providers: [
     provideAnimationsAsync(),

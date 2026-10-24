@@ -57,11 +57,11 @@ describe('PhotosListComponent', () => {
   }));
 
   it('stops once a short page signals the end of the list', fakeAsync(() => {
-    photoService.loadPhotos.and.returnValue(of(makeBatch(10))); // < PAGE_LIMIT
+    photoService.loadPhotos.and.returnValue(of(makeBatch(10)));
 
     component.loadPhotos();
     tick();
-    component.loadPhotos(); // игнорируется
+    component.loadPhotos();
     tick();
 
     expect(photoService.loadPhotos).toHaveBeenCalledTimes(1);

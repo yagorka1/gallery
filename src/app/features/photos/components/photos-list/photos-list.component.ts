@@ -74,7 +74,7 @@ export class PhotosListComponent implements AfterViewInit, OnDestroy {
         this.isEndOfList = true;
       }
 
-      queueMicrotask(() => this.fillViewport());
+      // queueMicrotask(() => this.fillViewport());
     })
   }
 
