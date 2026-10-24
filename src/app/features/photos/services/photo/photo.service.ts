@@ -20,7 +20,7 @@ export class PhotoService {
         map((items: PhotoDtoInterface[]) =>
           items.map((p: PhotoDtoInterface) => ({
             id: p.id,
-            url: `https://picsum.photos/id/${p.id}/200/300`,
+            url: `https://picsum.photos/id/${p.id}/300/200`,
           })),
         ),
         delay(ms),

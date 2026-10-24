@@ -8,8 +8,10 @@
 
   .photo {
     max-width: 100%;
-    max-height: calc(100dvh - 12rem);
-    object-fit: contain;
+    max-height: calc(100dvh - 200px);
+    height: auto;
+    width: auto;
+    display: block;
   }
 }
 
