@@ -1,4 +1,4 @@
-import { Component, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FavoritesService } from '../../services/favorites/favorites.service';
 import { PhotoInterface } from '../../../../core/interfaces/photo.interface';
@@ -11,7 +11,8 @@ import { PhotoCardComponent } from '../../../photos/components/photo-card/photo-
     PhotoCardComponent
   ],
   templateUrl: './favorites-list.component.html',
-  styleUrl: './favorites-list.component.scss'
+  styleUrl: './favorites-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FavoritesListComponent {
   private readonly favoritesService = inject(FavoritesService);

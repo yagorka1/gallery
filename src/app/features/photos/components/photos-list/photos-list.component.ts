@@ -73,7 +73,16 @@ export class PhotosListComponent implements AfterViewInit, OnDestroy {
       if (data.length < PAGE_LIMIT) {
         this.isEndOfList = true;
       }
+
+      queueMicrotask(() => this.fillViewport());
     })
+  }
+
+  private fillViewport(): void {
+    const el = this.anchor().nativeElement;
+    if (!this.isEndOfList && el.getBoundingClientRect().top <= window.innerHeight) {
+      this.loadPhotos();
+    }
   }
 
   public addToFavorite(photo: PhotoInterface) {

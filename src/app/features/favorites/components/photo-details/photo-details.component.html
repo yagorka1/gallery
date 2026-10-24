@@ -1,0 +1,11 @@
+@if (photo(); as photo) {
+  <div class="details">
+    <img class="photo" [src]="url()" [alt]="'Photo ' + photo.id" />
+
+    <button mat-raised-button color="warn" (click)="removeFromFavorites()">
+      Remove from favorites
+    </button>
+  </div>
+} @else {
+  <p class="empty">This photo is not in your favorites.</p>
+}
