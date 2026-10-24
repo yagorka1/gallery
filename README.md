@@ -1,27 +1,67 @@
-# GalleryTemplate
+# Photo Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
+A single-page photo library built with Angular. Browse an infinite stream of
+random photos, save the ones you like to **Favorites**, and open any favorite
+in a full-screen detail view. Favorites are persisted locally and survive a
+page refresh.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Photos (`/`)** — infinite scrollable grid of random photos. Clicking a
+  photo adds it to favorites. New photos load on scroll with a loading
+  indicator.
+- **Favorites (`/favorites`)** — a list of all saved photos. Persisted in
+  `localStorage`, so it survives page reloads. Clicking a photo opens its
+  detail page.
+- **Photo detail (`/photos/:id`)** — a single full-screen photo with a
+  **Remove from favorites** button.
 
-## Code scaffolding
+## Tech stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 17.3**
+- **TypeScript**, **RxJS**
+- **Angular Material**
+- **SCSS**
+- **Jasmine + Karma** for unit tests
 
-## Build
+## Getting started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js 18.13+
+- npm 8+
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install
 
-## Running end-to-end tests
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Run locally
 
-## Further help
+```bash
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The app will be available at `http://localhost:4200/`.
+
+### Run unit tests
+
+```bash
+npm test
+```
+
+### Production build
+
+```bash
+npm run build
+```
+
+## Project structure
+
+```
+src/app/
+├── core/          
+├── layout/      
+└── features/  
+```
