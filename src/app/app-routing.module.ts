@@ -13,8 +13,15 @@ const routes: Routes = [
     path: 'favorites',
     loadComponent: () => import('./features/favorites/components/favorites-list/favorites-list.component')
       .then((m) => m.FavoritesListComponent),
-
-  }
+  },
+  {
+    path: 'photos/:id',
+    loadComponent: () =>
+      import('./features/favorites/components/photo-details/photo-details.component').then(
+        (m) => m.PhotoDetailsComponent,
+      ),
+  },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
