@@ -5,12 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { PhotoInterface } from '../../../../core/interfaces/photo.interface';
 
 @Component({
-  selector: 'app-photo-details',
-  standalone: true,
-  imports: [MatButtonModule],
-  templateUrl: './photo-details.component.html',
-  styleUrl: './photo-details.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-photo-details',
+    imports: [MatButtonModule],
+    templateUrl: './photo-details.component.html',
+    styleUrl: './photo-details.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PhotoDetailsComponent {
   private readonly route: ActivatedRoute = inject(ActivatedRoute);

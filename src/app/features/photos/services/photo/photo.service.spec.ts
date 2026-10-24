@@ -1,7 +1,7 @@
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { PhotoService } from './photo.service';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { PhotoDtoInterface, PhotoInterface } from '../../../../core/interfaces/photo.interface';
 
 const MAX_DELAY_FLUSH = 300;
@@ -23,7 +23,7 @@ describe('PhotoService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotoService, provideHttpClient(), provideHttpClientTesting()],
+      providers: [PhotoService, provideHttpClient(withXhr()), provideHttpClientTesting()],
     });
     service = TestBed.inject(PhotoService);
     httpMock = TestBed.inject(HttpTestingController);

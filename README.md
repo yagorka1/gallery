@@ -18,7 +18,7 @@ page refresh.
 
 ## Tech stack
 
-- **Angular 17.3**
+- **Angular 22**
 - **TypeScript**, **RxJS**
 - **Angular Material**
 - **SCSS**
@@ -28,8 +28,8 @@ page refresh.
 
 ### Prerequisites
 
-- Node.js 18.13+
-- npm 8+
+- Node.js 22.12+
+- npm 10+
 
 ### Install
 

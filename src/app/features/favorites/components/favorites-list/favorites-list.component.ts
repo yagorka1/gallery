@@ -5,14 +5,13 @@ import { PhotoInterface } from '../../../../core/interfaces/photo.interface';
 import { PhotoCardComponent } from '../../../photos/components/photo-card/photo-card.component';
 
 @Component({
-  selector: 'app-favorites-list',
-  standalone: true,
-  imports: [
-    PhotoCardComponent
-  ],
-  templateUrl: './favorites-list.component.html',
-  styleUrl: './favorites-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-favorites-list',
+    imports: [
+        PhotoCardComponent
+    ],
+    templateUrl: './favorites-list.component.html',
+    styleUrl: './favorites-list.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavoritesListComponent {
   private readonly favoritesService = inject(FavoritesService);
