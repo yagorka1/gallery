@@ -17,7 +17,8 @@ export class PhotoDetailsComponent {
   private readonly router: Router = inject(Router);
   private readonly favorites: FavoritesService = inject(FavoritesService);
   private readonly id: string = this.route.snapshot.paramMap.get('id') ?? '';
-  public readonly photo: Signal<PhotoInterface | undefined> = computed(() => this.favorites.items().find((p) => p.id === this.id));
+  public readonly photo: Signal<PhotoInterface | undefined> = computed(() =>
+    this.favorites.items().find((p: PhotoInterface) => p.id === this.id));
   public readonly url: Signal<string> = computed(() => `https://picsum.photos/id/${this.id}/1200/800`);
 
   public removeFromFavorites(): void {
