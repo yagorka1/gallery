@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { HeaderComponent } from './layout/header/header.component';
   ],
   providers: [
     provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
   ],
   bootstrap: [AppComponent]
 })
