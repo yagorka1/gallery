@@ -1,6 +1,6 @@
 # Photo Library
 
-A single-page photo library built with Angular. Browse an infinite stream of
+A single-page photo library built with Angular (https://yagorka1.github.io/gallery/). Browse an infinite stream of
 random photos, save the ones you like to **Favorites**, and open any favorite
 in a full-screen detail view. Favorites are persisted locally and survive a
 page refresh.
