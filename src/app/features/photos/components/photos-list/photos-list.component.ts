@@ -21,15 +21,14 @@ const PAGE_LIMIT: number = 30;
 const TOST_DURATION: number = 2000;
 
 @Component({
-  selector: 'app-photos-list',
-  standalone: true,
-  imports: [
-    PhotoCardComponent, MatProgressSpinner
-  ],
-  providers: [PhotoService],
-  templateUrl: './photos-list.component.html',
-  styleUrl: './photos-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-photos-list',
+    imports: [
+        PhotoCardComponent, MatProgressSpinner
+    ],
+    providers: [PhotoService],
+    templateUrl: './photos-list.component.html',
+    styleUrl: './photos-list.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PhotosListComponent implements AfterViewInit, OnDestroy {
   private photoService: PhotoService = inject(PhotoService);
